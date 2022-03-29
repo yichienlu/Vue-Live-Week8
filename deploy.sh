@@ -24,6 +24,6 @@ git commit -m 'deploy'
 # 以這個專案來講就要改成這樣以下這樣，下面是走 ssh 模式
 # git push -f git@github.com:yichienlu/Vue-Cli-deploy.git main:gh-pages
 # 除此之外，也可以改走 HTTPS 模式
-git push -f https://github.com/yichienlu/Vue-Live-Final.git main:gh-pages
+git push -f https://github.com/yichienlu/Vue-Live-Week8.git main:gh-pages
 
 cd -

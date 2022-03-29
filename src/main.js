@@ -3,7 +3,7 @@ import 'bootstrap'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 import 'animate.css'
-// import WOW from 'wow.js'
+import WOW from 'wow.js'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -34,7 +34,7 @@ configure({
 // 設定預設語系
 setLocale('zh_TW')
 
-// new WOW({ live: false }).init()
+new WOW({ live: false }).init()
 
 const app = createApp(App)
 app.use(router)
