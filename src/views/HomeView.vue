@@ -1,22 +1,28 @@
 <template>
   <swiper
-    :slides-per-view="3"
-    :space-between="50"
+    :slides-per-view="1"
+    :loop="true"
+    :autoplay="{
+      delay: 3000,
+      disableOnInteraction: false,
+    }"
+    :modules="modules"
   >
     <swiper-slide>
-      <img src="https://images.unsplash.com/photo-1620567782734-7db77bf90550?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80" alt="">
+      <div class="img-cover" style="height: 50vh; background-image:url('https://images.unsplash.com/photo-1620567782734-7db77bf90550?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80');">
+      </div>
     </swiper-slide>
     <swiper-slide>
-      <img src="https://images.unsplash.com/photo-1620567782734-7db77bf90550?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80" alt="">
+      <div class="img-cover" style="height: 50vh; background-image:url('https://images.unsplash.com/photo-1622116522782-a6120608006e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80');">
+      </div>
     </swiper-slide>
     <swiper-slide>
-      <img src="https://images.unsplash.com/photo-1620567782734-7db77bf90550?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80" alt="">
+      <div class="img-cover" style="height: 50vh; background-image:url('https://images.unsplash.com/photo-1620567838237-8ecbb896fc88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80');">
+      </div>
     </swiper-slide>
   </swiper>
-  <div class="img-cover position-relative" style="height: 50vh; background-image:url('https://images.unsplash.com/photo-1620567782734-7db77bf90550?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80');">
-    <h1 class="position-absolute top-100 start-50 translate-middle fw-bolder fst-italic dancing" style="font-size: 4rem">Eden Handmade</h1>
-  </div>
-  <div class="py-5 text-center bg-light">
+  <div class="pb-5 text-center bg-light position-relative">
+    <h1 class="text-center fw-bolder fst-italic dancing wow slideInUp" style="font-size: 4rem">Eden Handmade</h1>
     <h3 class="text-secondary mt-5">聆聽肌膚的渴望</h3>
     <br>
     <p>純手工、純天然</p>
@@ -69,7 +75,7 @@
   <div class="container my-5">
     <hr class="mb-5">
     <h2 class="fw-bold text-center mb-4">精選商品<span class="dancing h3 text-secondary fw-bold ms-3">Products</span></h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 wow slideInUp">
       <router-link to="/products" class="col d-block position-relative img-cover product-animation" style="height: 200px;background-image: url('https://images.unsplash.com/photo-1624459404847-5ad5f6a09246?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80')">
         <div class="position-absolute top-0 bottom-0 start-0 end-0 fs-5"></div>
         <h3 class="position-absolute bottom-0 end-0 fw-bold m-2">手工皂系列</h3>
@@ -92,15 +98,26 @@
 
 <script>
 // Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
 // Import Swiper styles
-import 'swiper/swiper.scss'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
+// import './style.css'
+
+import { Autoplay, Pagination, Navigation } from 'swiper'
 
 export default {
   name: 'HomeView',
   components: {
     Swiper,
     SwiperSlide
+  },
+  setup () {
+    return {
+      modules: [Autoplay, Pagination, Navigation]
+    }
   }
 }
 </script>

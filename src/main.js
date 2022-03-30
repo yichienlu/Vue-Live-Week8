@@ -34,8 +34,6 @@ configure({
 // 設定預設語系
 setLocale('zh_TW')
 
-new WOW({ live: false }).init()
-
 const app = createApp(App)
 app.use(router)
 app.use(VueAxios, axios)
@@ -51,3 +49,5 @@ app.component('FormComponent', Form)
 app.component('FieldComponent', Field)
 app.component('ErrorMessage', ErrorMessage)
 app.mount('#app')
+
+new WOW({ live: false }).init()
